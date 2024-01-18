@@ -5,6 +5,11 @@
    padding: 0; 
    font-family: 'Roboto', sans-serif;
 }
+
+.body{
+    background-color: black;
+    color: white;
+}
 .left{
     width: 25vw;
     padding: 10px;
@@ -34,12 +39,41 @@
     width: 100%;
     gap: 15px;
     padding-top:14px;
+    padding: 23px 1px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .heading img{
-    width: 34px;
+    width: 30px;
 }
 
+.footer{
+    flex-wrap: wrap;
+    padding: 0px 24px;
+    position: absolute;
+    bottom:0px;
+    font-size: 10px;
+}
 
+.footer div{
+    margin-right: 16px;
+}
+
+.footer div a{
+    text-decoration:none;
+    color: grey;
+}
+
+.library{
+    min-height: 80vh;
+    position: relative;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .nav{
+    display: flex;
+}
