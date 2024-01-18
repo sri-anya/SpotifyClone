@@ -17,12 +17,9 @@
 
 .right{
     width: 75vw;
+    margin: 15px 0px;
     
 }
-.home{
-   
-}
-
 
 .home ul li{
     display: flex;
@@ -50,7 +47,7 @@
 
 .footer{
     flex-wrap: wrap;
-    padding: 0px 24px;
+    padding: 12px 24px;
     position: absolute;
     bottom:0px;
     font-size: 10px;
@@ -65,6 +62,35 @@
     color: grey;
 }
 
+.buttons > button{
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin:3px;
+    font-weight: bolder;
+}
+
+#signUp{
+    color:rgb(144, 144, 144);
+    background-color: black;
+}
+
+#signUp:hover{
+   color: white;
+   font-size: 14px;
+}
+
+#logIn{
+    color:black;
+    background-color: white;
+}
+
+#logIn:hover{
+   font-size: 14px;
+}
+
+
+
 .library{
     min-height: 80vh;
     position: relative;
@@ -72,8 +98,93 @@
 .header{
     display: flex;
     justify-content: space-between;
+    background-color: rgb(23, 23, 23);
+}
+
+.header > *{
+    padding: 10px;
 }
 
 .header .nav{
     display: flex;
 }
+
+.spotifyPlaylists{
+    padding: 16px; 
+}
+
+.cardContainer section{
+   display: flex;
+    margin: 20px;
+    display:flex;
+    gap:10px;
+    /* flex-wrap:wrap;  */
+    overflow: hidden;
+    
+}
+
+
+
+.spotifyPlaylists .card{
+    width: 160px;
+    height: 224px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(24,24,24);
+    position: relative;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    
+}
+
+.spotifyPlaylists .card:hover{
+    background-color: rgb(40,40,40);
+}
+
+.spotifyPlaylists .card:hover .playButton{
+    opacity: 1;
+    bottom: 33%;
+}
+
+.card > *{
+    text-overflow: ellipsis;
+}
+
+.card img{
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.card h3{
+    font-weight: 700;
+    
+
+}
+
+.card p{
+    font-weight: 400;
+    color: gray;
+    overflow-y:hidden;
+    text-overflow: ellipsis;
+}
+
+
+.playButton{
+    background-color: rgb(30, 215, 96);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    padding: 14px;
+    position: absolute;
+    bottom: 28%;
+    left: 63%;
+    z-index:1px;
+    opacity:0;
+    transition: all 0.5s ease-in;
+}
+
+
