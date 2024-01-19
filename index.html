@@ -7,6 +7,7 @@
     <title>Spotify - Web Player: Music for everyone</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utility.css">
+
 </head>
 
 <body>
@@ -25,6 +26,13 @@
 
                     <img class="invert" src="assets/images/library.svg" alt="library">
                     <h2>Your Library</h2>
+                    
+                    
+                </div>
+                <div class="songList">
+                    <ul>
+                        
+                    </ul>
                 </div>
 
                 <div class="footer flex">
@@ -211,7 +219,20 @@
                     </section> -->
 
                 </div>
-                <div class="playBar">playBar</div>
+                <div class="playBar flex justify-center">
+                    <div class="seekbar">
+                        <div class="circle">
+                            
+                        </div>
+                    </div>
+                    <div class="songInfo"></div>
+                    <div class="songsButtons">
+                        <img src="assets/images/previousButton.svg" alt="">
+                        <img src="assets/images/playSong.svg" alt="">
+                        <img src="assets/images/nextButton.svg" alt="">
+                    </div>
+                    <div class="songTime"></div>
+                </div>
             </div>
 
             <!-- Right Footer -->
@@ -254,7 +275,7 @@
             <div class="copyRight m-1 p-1">&copy 2024 Spotify AB</div>
         </div>
     </div>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
