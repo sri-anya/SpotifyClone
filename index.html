@@ -13,8 +13,11 @@
 <body>
     <div class="container flex bg-black">
         <div class="left">
+            <div class="close">
+                <img class="invert"src="assets/images/close.svg" alt="">
+            </div>
             <div class="home bg-gray rounded m-1 p-1">
-                <div class="logo"><img class="invert" src="assets/images/logo.svg" alt="logo"></div>
+                <div class="logo"><img width="110" class="invert" src="assets/images/logo.svg" alt="logo"></div>
                 <ul>
                     <li><img class="invert" src="assets/images/home.svg" alt="home">Home</li>
                     <li><img class="invert" src="assets/images/search.svg" alt="search">Search</li>
@@ -26,12 +29,12 @@
 
                     <img class="invert" src="assets/images/library.svg" alt="library">
                     <h2>Your Library</h2>
-                    
-                    
+
+
                 </div>
                 <div class="songList">
                     <ul>
-                        
+
                     </ul>
                 </div>
 
@@ -52,6 +55,7 @@
         <div class="right bg-gray rounded">
             <div class="header rounded">
                 <div class="nav">
+                    <img class="hamburger invert" src="assets/images/hamburger.svg" alt="">
                     <img width="20" height="20" class="invert" src="assets/images/leftNavArrow.svg" alt="leftArrow">
                     <img width="20" height="20" class="invert" src="assets/images/rightNavArrow.svg" alt="leftArrow">
                 </div>
@@ -222,21 +226,27 @@
                 <div class="playBar flex justify-center">
                     <div class="seekbar">
                         <div class="circle">
-                            
+
                         </div>
                     </div>
-                    <div class="songInfo"></div>
-                    <div class="songsButtons">
-                        <img src="assets/images/previousButton.svg" alt="">
-                        <img src="assets/images/playSong.svg" alt="">
-                        <img src="assets/images/nextButton.svg" alt="">
+                    <div class="aboveBar">
+                        <div class="songInfo"></div>
+                        <div class="songsButtons">
+                            <img width="35" id="previous" src="assets/images/previousButton.svg" alt="">
+                            <img width="35"  id="play" src="assets/images/playSong.svg" alt="">
+                            <img  width="35" id="next" src="assets/images/nextButton.svg" alt="">
+                        </div>
+                        <div class="songTime">
+                            <div class="volume">
+                                <img class="invert" src="assets/images/volume.svg" alt="">
+                            </div>
+                        </div>
                     </div>
-                    <div class="songTime"></div>
                 </div>
             </div>
 
             <!-- Right Footer -->
-            <div class="rightFooter flex justify-between">
+            <!-- <div class="rightFooter flex justify-between">
                 <div class="innerLeftFooter flex">
                     <ul class="firstList">
                         <li style="font-weight:700;">Company</li>
@@ -268,7 +278,7 @@
                         <img class="invert" src="assets/images/facebook.svg" alt="">
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- copyright -->
             <hr class="separator">
