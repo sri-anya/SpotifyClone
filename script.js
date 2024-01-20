@@ -24,7 +24,7 @@ async function getSongs() {
     let div = document.createElement("div")
     div.innerHTML = response;
     let as = div.getElementsByTagName("a");
-    console.log(as);
+ 
     let songs = []
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
@@ -60,7 +60,7 @@ async function main() {
     //Get the list of all the songs
 
     songs = await getSongs();
-    console.log(songs);
+  
     playMusic(songs[0], true)
 
     //List all the songs in the library
@@ -116,7 +116,7 @@ async function main() {
 
 
     //Add and event Listener to seekbar
-    document.querySelector(".seekbar").addEventListener("click",(e)=>{
+    document.querySelector(".seekbar").addEventListener("click", (e) => {
         let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
         document.querySelector(".circle").style.left = percent + "%";
         currentSong.currentTime = ((currentSong.duration) * percent) / 100
@@ -154,6 +154,13 @@ async function main() {
         }
     })
 
-
+    // Add an event to volume
+    document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
+        console.log("Setting volume to", e.target.value, "/ 100")
+        currentSong.volume = parseInt(e.target.value) / 100
+        if (currentSong.volume >0){
+            document.querySelector(".volume>img").src = document.querySelector(".volume>img").src.replace("assets/images/mute.svg", "assets/images/volume.svg")
+        }
+    })
 }
 main()
