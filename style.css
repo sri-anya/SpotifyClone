@@ -165,6 +165,7 @@
 .spotifyPlaylists .card:hover .playButton {
     opacity: 1;
     bottom: 42%;
+    cursor: pointer;
 }
 
 .card>* {

@@ -1,6 +1,7 @@
 //global variables
 let currentSong = new Audio();
 let songs;
+let currFolder;
 
 function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
@@ -16,32 +17,32 @@ function secondsToMinutesSeconds(seconds) {
     return `${formattedMinutes}:${formattedSeconds}`;
 }
 
-async function getSongs() {
-    let a = await fetch("http://127.0.0.1:3000/songs/");
+async function getSongs(folder) {
+    currFolder = folder
+    let a = await fetch(`http://127.0.0.1:3000/${folder}`);
     let response = await a.text();
-
 
     let div = document.createElement("div")
     div.innerHTML = response;
     let as = div.getElementsByTagName("a");
  
-    let songs = []
+    songs = []
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split("/songs/")[1])
+            songs.push(element.href.split(`${folder}`)[1])
         }
 
 
     }
-    return songs;
+  
 }
 
 
 //playMusic
 
 const playMusic = (track, pause = false) => {
-    currentSong.src = "/songs/" + track;
+    currentSong.src = `${currFolder}` + track;
     if (!pause) {
 
 
@@ -59,7 +60,7 @@ async function main() {
 
     //Get the list of all the songs
 
-    songs = await getSongs();
+    await getSongs("songs/PopRising");
   
     playMusic(songs[0], true)
 
@@ -161,6 +162,17 @@ async function main() {
         if (currentSong.volume >0){
             document.querySelector(".volume>img").src = document.querySelector(".volume>img").src.replace("assets/images/mute.svg", "assets/images/volume.svg")
         }
+    })
+
+
+    //Load the playlist whenever playlist card is clicked
+    Array.from(document.getElementsByClassName("card")).forEach(e=>{
+        e.addEventListener("click",async (item)=>{
+            console.log('item.target.dataset', item.currentTarget.dataset)
+            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`)
+         
+
+        })
     })
 }
 main()
