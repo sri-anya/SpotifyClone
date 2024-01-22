@@ -4,6 +4,10 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+  
+}
+html{
+    background-color: black;
 }
 
 .body {
@@ -124,9 +128,9 @@
 
 }
 
-/* .cardContainer{
-    padding: 0px 20px;
-} */
+.cardContainer{
+    max-height: 60vh;
+} 
 
 .cardContainer section {
     display: flex;
@@ -207,10 +211,7 @@
     transition: all 0.5s ease-in;
 }
 
-.rightFooter {
 
-    margin: 60px 30px 30px 30px;
-}
 
 .innerLeftFooter {
     justify-content: space-between;
@@ -242,6 +243,8 @@
 }
 
 hr {
+    position: fixed;
+    bottom:142px;
     width: 70vw;
     margin: auto;
     border-color: rgb(41, 41, 41);
@@ -251,7 +254,8 @@ hr {
 
     min-height: 40px;
     position: fixed;
-    bottom: 30px;
+    bottom: 30px; 
+  
     background-color: rgb(111, 189, 165);
     width: 70%;
     padding: 12px;
@@ -360,6 +364,11 @@ hr {
     justify-content: center;
     align-items: center;
     gap: 12px;
+    cursor: pointer;
+}
+
+.range input{
+    cursor: pointer;
 }
 
 .songInfo {
@@ -429,7 +438,7 @@ hr {
         display: block;
     }
 
-    .card {
+    .spotifyPlaylists  .card {
 
         margin: auto;
     }
@@ -450,5 +459,20 @@ hr {
         align-items: center;
         flex-direction: column;
         gap: 13px;
+    }
+    .cardContainer{
+        max-height: 40vh;
+    } 
+}
+
+@media (max-width: 500px) {
+
+    .spotifyPlaylists  .card{
+        width: auto;
+    }
+
+    hr{
+        bottom: 283px;
+        margin: 0px 30px;
     }
 }
