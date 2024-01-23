@@ -19,11 +19,12 @@ function secondsToMinutesSeconds(seconds) {
 
 async function getSongs(folder) {
 
-
+    console.log('folder',folder);
+    
     document.querySelector(".songList ul").innerHTML = "";
     currFolder = folder
-   
-    let a = await fetch(`http://127.0.0.1:3000/${folder}`);
+    let a = await fetch(`${folder}`);
+    // let a = await fetch(`http://127.0.0.1:3000/${folder}`);
     let response = await a.text();
 
     let div = document.createElement("div")
@@ -78,6 +79,7 @@ async function getSongs(folder) {
 //playMusic
 
 const playMusic = (track, pause = false) => {
+    console.log(track,currFolder)
     currentSong.src = `${currFolder}` + track;
     if (!pause) {
 
@@ -92,7 +94,7 @@ const playMusic = (track, pause = false) => {
 
 
 async function displayAlbums() {
-    let a = await fetch(`http://127.0.0.1:3000/songs/`);
+    let a = await fetch(`songs/`);
     let response = await a.text();
     let div = document.createElement("div")
     div.innerHTML = response;
@@ -109,10 +111,11 @@ async function displayAlbums() {
             //Get the metadata of the folder
             let a = await fetch(`http://127.0.0.1:3000/songs/${folder}/info.json`)
             let response = await a.json();
-          
+            console.log('response',response.cover);
+            
             cardContainerSection.innerHTML += `<div data-folder=${response.dataFolder} class="card">
         <div class="playButton">
-            <img src="assets/images/playButton.svg" alt="">
+            <img src=${response.cover} alt="">
         </div>
         <img src="https://i.scdn.co/image/ab67706f0000000254473de875fea0fd19d39037" alt="">
         <h3>${response.title}</h3>
@@ -125,7 +128,7 @@ async function displayAlbums() {
     Array.from(document.getElementsByClassName("card")).forEach(e => {
         e.addEventListener("click", async (item) => {
             
-            songs =await getSongs(`songs/${item.currentTarget.dataset.folder}`)
+            songs =await getSongs(`songs/${item.currentTarget.dataset.folder}/`)
             
             playMusic(songs[0]);
 
@@ -139,7 +142,7 @@ async function main() {
 
     //Get the list of all the songs
 
-    await getSongs("songs/PopRising");
+    await getSongs("songs/PopRising/");
 
     playMusic(songs[0], true);
 
