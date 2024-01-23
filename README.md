@@ -24,7 +24,7 @@ This is a responsive client side website.
 
 Check out the live demo [here](http://spotifybyaastha.freewebhostmost.com/).
 
-![Demo](./assets/images/demoScreenshot.png)
+![Demo](assets/images/demoScreenshot.png)
 
 ### Instructions:
 
