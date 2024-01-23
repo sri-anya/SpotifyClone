@@ -94,7 +94,7 @@ const playMusic = (track, pause = false) => {
 
 
 async function displayAlbums() {
-    let a = await fetch(`songs/`);
+    let a = await fetch(`/songs/`);
     let response = await a.text();
     let div = document.createElement("div")
     div.innerHTML = response;
@@ -105,16 +105,16 @@ async function displayAlbums() {
         const e = Array.from(anchors)[index];
         if (e.href.includes("/songs") && !e.href.includes(".htaccess")) {
 
-            if (e.href.includes("/songs")) {
-                let folder = e.href.split("/").slice(-2)[0]
 
-                //Get the metadata of the folder
+            let folder = e.href.split("/").slice(-2)[0]
 
-                let a = await fetch(`/songs/${folder}/info.json`)
+            //Get the metadata of the folder
 
-                let response = await a.json();
+            let a = await fetch(`/songs/${folder}/info.json`)
 
-                cardContainerSection.innerHTML += `<div data-folder=${response.dataFolder} class="card">
+            let response = await a.json();
+
+            cardContainerSection.innerHTML += `<div data-folder=${response.dataFolder} class="card">
         <div class="playButton">
             <img src="assets/images/playButton.svg" alt="">
         </div>
@@ -122,7 +122,7 @@ async function displayAlbums() {
         <h3>${response.title}</h3>
         <p>${response.description}</p>
     </div>`
-            }
+
         }
     }
 
@@ -144,7 +144,7 @@ async function main() {
 
     //Get the list of all the songs
 
-    await getSongs("songs/Calm/");
+    songs = await getSongs("songs/Calm/");
 
     playMusic(songs[0], true);
 
