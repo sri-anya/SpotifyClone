@@ -129,7 +129,7 @@ html{
 }
 
 .cardContainer{
-    max-height: 60vh;
+    max-height: 38vh;
 } 
 
 .cardContainer section {
@@ -374,8 +374,11 @@ hr {
 .songInfo {
     padding: 10px 34px;
     font-size: 15px;
-    width: 250px;
+    width: 270px;
     text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .songTime {
@@ -410,6 +413,9 @@ hr {
     .songInfo,
     .songTime {
         width: auto;
+        overflow: hidden;
+        text-overflow:clip;
+        white-space: nowrap;
     }
 
     .left .close {
@@ -427,6 +433,10 @@ hr {
     .playBar {
         width: calc(100vw - 60px);
         right: 25px;
+        bottom: 10px;
+        height: 190px;
+        padding: 0px;
+        gap:2px;
     }
 
     .seekbar {
@@ -461,8 +471,11 @@ hr {
         gap: 13px;
     }
     .cardContainer{
-        max-height: 40vh;
+        max-height: 70vh;
     } 
+    hr{
+        display: none;
+    }
 }
 
 @media (max-width: 500px) {
@@ -472,7 +485,7 @@ hr {
     }
 
     hr{
-        bottom: 283px;
-        margin: 0px 30px;
+        display: none;
     }
+    
 }
