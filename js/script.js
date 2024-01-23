@@ -111,13 +111,12 @@ async function displayAlbums() {
             //Get the metadata of the folder
             let a = await fetch(`http://127.0.0.1:3000/songs/${folder}/info.json`)
             let response = await a.json();
-            console.log('response',response.cover);
-            
+          
             cardContainerSection.innerHTML += `<div data-folder=${response.dataFolder} class="card">
         <div class="playButton">
-            <img src=${response.cover} alt="">
+            <img src="assets/images/playButton.svg" alt="">
         </div>
-        <img src="https://i.scdn.co/image/ab67706f0000000254473de875fea0fd19d39037" alt="">
+        <img src=${response.cover} alt="">
         <h3>${response.title}</h3>
         <p>${response.description}</p>
     </div>`
@@ -142,7 +141,7 @@ async function main() {
 
     //Get the list of all the songs
 
-    await getSongs("songs/PopRising/");
+    await getSongs("songs/Calm/");
 
     playMusic(songs[0], true);
 

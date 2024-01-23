@@ -1,0 +1,6 @@
+{
+    "title": "Today's Top Hits",
+    "description": "Listen to the hotest 50!",
+    "dataFolder":"TodaysTopHits",
+    "cover":"/assets/images/TodaysTopHits.jpg"
+}
