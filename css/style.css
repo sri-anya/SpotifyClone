@@ -4,9 +4,10 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-  
+
 }
-html{
+
+html {
     background-color: black;
 }
 
@@ -128,9 +129,9 @@ html{
 
 }
 
-.cardContainer{
-    max-height: 33vh;
-} 
+.cardContainer {
+    max-height: 36vh;
+}
 
 .cardContainer section {
     display: flex;
@@ -244,7 +245,7 @@ html{
 
 hr {
     position: fixed;
-    bottom:142px;
+    bottom: 142px;
     width: 70vw;
     margin: auto;
     border-color: rgb(41, 41, 41);
@@ -254,8 +255,8 @@ hr {
 
     min-height: 40px;
     position: fixed;
-    bottom: 30px; 
-  
+    bottom: 30px;
+
     background-color: rgb(111, 189, 165);
     width: 70%;
     padding: 12px;
@@ -367,7 +368,7 @@ hr {
     cursor: pointer;
 }
 
-.range input{
+.range input {
     cursor: pointer;
 }
 
@@ -406,15 +407,15 @@ hr {
         background-color: black;
         padding: 0;
         height: 100vh;
-        
+
     }
 
     .songInfo,
     .songTime {
         width: auto;
-        overflow: hidden;
-        text-overflow:clip;
-        white-space: nowrap;
+
+        font-size: 12px;
+        text-wrap: wrap;
     }
 
     .left .close {
@@ -432,22 +433,37 @@ hr {
     .playBar {
         width: calc(100vw - 60px);
         right: 25px;
-        bottom: 10px;
-        height: 190px;
+        bottom: 0px;
+
         padding: 0px;
-        gap:2px;
+        gap: 2px;
+    }
+
+    #previous {
+        width: 20px;
+    }
+
+    #play {
+        width: 20px;
+    }
+
+    #next {
+        width: 20px;
     }
 
     .seekbar {
         width: calc(100vw - 60px);
 
     }
-
+    
+    #showAllPlaylists {
+        display: none;
+    }
     .hamburger {
         display: block;
     }
 
-    .spotifyPlaylists  .card {
+    .spotifyPlaylists .card {
 
         margin: auto;
     }
@@ -469,17 +485,19 @@ hr {
         flex-direction: column;
         gap: 13px;
     }
-    .cardContainer{
+
+    .cardContainer {
         max-height: 60vh;
-    } 
-    hr{
+    }
+
+    hr {
         display: none;
     }
 }
 
 @media (max-width: 500px) {
 
-    .spotifyPlaylists  .card{
+    .spotifyPlaylists .card {
         width: auto;
     }
 
@@ -492,7 +510,7 @@ hr {
     }
 
 
-    hr{
+    hr {
         display: none;
     }
 
@@ -500,7 +518,7 @@ hr {
         margin: 0 6px;
     }
 
-    .header{
+    .header {
         padding: 7px;
     }
 
@@ -508,14 +526,35 @@ hr {
         padding: 4px;
     }
 
-    .library{
+    .library {
         height: 85vh;
     }
 
-    .left{ 
+    .left {
         width: 100vw;
         position: fixed;
         top: 0;
     }
-    
+
+    .playBar {
+        width: calc(100vw - 60px);
+        right: 25px;
+        bottom: 0px;
+
+        padding: 0px;
+        gap: 2px;
+    }
+
+    #showAllPlaylists {
+        display: none;
+    }
+
+    .songInfo,
+    .songTime {
+        width: auto;
+        text-wrap: wrap;
+
+        font-size: 12px;
+
+    }
 }
