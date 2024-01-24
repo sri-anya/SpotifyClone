@@ -33,9 +33,10 @@ Check out the live demo [here](http://spotifybyaastha.freewebhostmost.com/).
 3. Explore the responsive design on different devices.
 4. Interact with the playbar controls.
 5. Toggle the visibility of the playlist on larger screens.
-6. Explore the disabled features (navigation bar arrows, login/signup buttons).
-7. Navigate the responsive menu on smaller screens.
-8. Provide feedback on your experience.
+
+6. Navigate the responsive menu on smaller screens.
+7. Provide feedback on your experience.
+8. Checkout the hamburger menu for small screens.
 
 Feel free to explore and interact with the demo to get a hands-on experience of the project!
 
@@ -104,6 +105,15 @@ Feel free to explore these features and functionalities on different devices, an
 - **Webhostmost:** Utilized as the web hosting service to deploy and make the project accessible online.
 - **Visual Studio Code:** Chosen as the code editor for developing and editing the project.
 - **GitHub:** Used for version control and collaboration, hosting the project repository.
+
+## Badges
+
+[![HTML](https://img.shields.io/badge/HTML-5-orange)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS](https://img.shields.io/badge/CSS-3-blue)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-green)](https://github.com/your-username/spotify-landing-clone)
+[![Visual Studio Code](https://img.shields.io/badge/VSCode-Editor-blueviolet)](https://code.visualstudio.com/)
+[![YouTube Studios](https://img.shields.io/badge/YouTube%20Studios-Integrated-red)](https://www.youtube.com/yt/studio/)
 
 
 ## Contributing
